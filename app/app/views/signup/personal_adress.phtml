@@ -1,0 +1,32 @@
+<h2>Sign up</h2>
+
+<?php echo $this->tag->form("signup/personal_adress"); ?>
+
+    <p>
+        <label for="country">country</label>
+        <?php echo $this->tag->textField("country"); ?>
+    </p>
+
+    <p>
+        <label for="city">city</label>
+        <?php echo $this->tag->textField("city"); ?>
+    </p>
+
+   <p>
+        <label for="street">street</label>
+        <?php echo $this->tag->textField("street"); ?>
+    </p>
+    
+   <p>
+        <label for="house">house</label>
+        <?php echo $this->tag->textField("house"); ?>
+    </p>
+    
+     <p>
+        <label for="apartment">apartment</label>
+        <?php echo $this->tag->textField("apartment"); ?>
+    </p>
+    
+    <p>
+        <?php echo $this->tag->submitButton("to apply"); ?>
+    </p>

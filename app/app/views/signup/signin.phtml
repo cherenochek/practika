@@ -1,0 +1,63 @@
+
+<?php
+$login = $this->request->getPost('login');
+$password = $this->request->getPost('password');
+$auth=0;
+if ($users->count() > 0) {
+     foreach ($users as $user) { 
+            
+                   
+                if($login == $user->login && $password == $user->password)
+                {
+                    
+                   $this->view->$id = $user->id;
+                    ?>
+                    <h2>passport</h2>
+
+                        <?php echo $this->tag->form("signup/passport"); ?>
+
+                        <p>
+                        <label for="seria_nomber" >seria nomber</label>
+                        <?php echo $this->tag->textField("seria_nomber"); ?>
+                        </p>
+
+                        <p>
+                        <label for="issue_by">issue by</label>
+                        <?php echo $this->tag->textField("issue_by"); ?>
+                        </p>
+
+                        <p>
+                        <label for="when_issue">when issue</label>
+                        <?php echo $this->tag->textField("when_issue"); ?>
+                        </p>
+    
+                        <p>
+                        <label for="FIO">FIO</label>
+                        <?php echo $this->tag->textField("FIO"); ?>
+                        </p>
+    
+                        <p>
+                        <?php echo $this->tag->submitButton("to apply"); ?>
+                        </p>
+                    <?php
+                    $auth=1;
+                    break;
+                }else{
+                    $message = "Incorrect login or password";
+                }
+                   
+            
+         } 
+         if($auth==0){
+             ?>
+<div class="alert alert-<?php echo $success === true ? 'success' : 'danger'; ?>">
+<?php echo $message; ?>
+</div>
+
+<?php echo $this->tag->linkTo(['/', 'Go back', 'class' => 'btn btn-primary']); 
+}
+   
+}else{
+    echo 'there are no registered users in the application';?><br><?php
+    echo $this->tag->linkTo(['/', 'Go back', 'class' => 'btn btn-primary']); 
+}

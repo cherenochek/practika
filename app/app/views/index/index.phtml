@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<title>sign in</title>
+</head>
+<body>
+
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col">
+				<h1>sign in</h1>
+<?php echo $this->tag->form("signup/signin"); ?>
+
+    <p>
+        <label for="login">login</label>
+        <?php echo $this->tag->textField("login"); ?>
+    </p>
+
+    <p>
+        <label for="password">password</label>
+        <?php echo $this->tag->textField("password"); ?>
+    </p>
+
+    <p>
+        <?php echo $this->tag->submitButton("signin"); ?>
+    </p>
+				 <br>
+<?php
+echo PHP_EOL;
+echo PHP_EOL;
+echo $this->tag->linkTo(['signup','Sign up Here!', 'class' => 'btn btn-primary']);?>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
